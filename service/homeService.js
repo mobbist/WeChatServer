@@ -3,7 +3,7 @@
 const sha1 = require("sha1");
 async function checkSignature(ctx) {
     let token = "airwallex1";
-    let { signature, timestamp, nonce } = ctx.request.query
+    let { signature, timestamp, nonce, echostr } = ctx.request.query
     /* 
         1）将token、timestamp、nonce三个参数进行字典序排序 
         2）将三个参数字符串拼接成一个字符串进行sha1加密 
@@ -20,7 +20,7 @@ async function checkSignature(ctx) {
     console.log("最终是否一样:" + (sha == signature));
     if (ctx.request.method == 'GET') {
         if (sha == signature) {
-            return Promise.resolve(true);
+            return Promise.resolve(echostr);
         } else {
             return Promise.resolve(false);
         }
