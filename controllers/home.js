@@ -2,7 +2,6 @@
 const userService = require("../service/homeService");
 
 async function getIndex(ctx) {
-    console.log(ctx.request.ip);
     var user = await userService.getUser();
     ctx.body = user;
 }
