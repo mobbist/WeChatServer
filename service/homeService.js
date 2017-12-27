@@ -2,7 +2,7 @@
 //具体干实事的模块
 const sha1 = require("sha1");
 async function checkSignature(ctx) {
-    let token = "airwallex1";
+    let token = "airwallexBillZhu";
     let { signature, timestamp, nonce, echostr } = ctx.request.query
     /* 
         1）将token、timestamp、nonce三个参数进行字典序排序 
