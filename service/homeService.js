@@ -16,6 +16,8 @@ async function checkSignature(ctx) {
     console.log("nonce:" + nonce);
     console.log("signature:" + signature);
     console.log("最终编译是否和signature一样:" + sha);
+    console.log("请求方式:" + ctx.request.method);
+    console.log("最终是否一样:" + (sha == signature));
     if (ctx.request.method == 'GET') {
         if (sha == signature) {
             return Promise.resolve(true);
