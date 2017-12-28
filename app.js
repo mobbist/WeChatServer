@@ -52,7 +52,7 @@ app.use(async (ctx, next) => {
                 e.status = 400
             })
 
-        next()
+        await next()
     } else {
         await next()
     }
