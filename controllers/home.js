@@ -8,7 +8,7 @@ async function getIndex(ctx) {
 
 
 
-    ctx.body = "123"
+    //ctx.body = "123"
 }
 module.exports = {
     getIndex
