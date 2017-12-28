@@ -3,14 +3,6 @@ const static = require("koa-static");
 const path = require("path");
 const app = new Koa();
 
-//监听是否是nginx的request
-app.use(async (ctx, next) => {
-    if (ctx.request.header.isnginx == "isNginx-true") {
-        await next();
-    } else {
-        return false
-    }
-});
 
 
 
