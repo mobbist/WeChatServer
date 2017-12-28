@@ -9,8 +9,7 @@ const getAccessToken = async () => {
 
 //去微信服务端获取access_token
 toWechatAccessToken = async () => {
-    var res = await request(`http://47.91.245.123:8081/getAccessToken`)
-    console.log(res.body);
+    var res = await request(`http://127.0.0.1:6300/getAccessToken`)
     return Promise.resolve(res.body);
 }
 
