@@ -5,7 +5,7 @@ const { getAccessToken } = require("../service/accessToken");
 
 async function getIndex(ctx) {
     // let accessToken = await getAccessToken();
-    easyCheck();
+    easyCheck(ctx);
 
 
     ctx.body = "123"
