@@ -4,7 +4,7 @@ const userService = require("../service/homeService");
 const { getAccessToken } = require("../service/accessToken");
 async function getIndex(ctx) {
     // let accessToken = await getAccessToken();
-
+    userService.checkSignature()
 
 
     ctx.body = "123"
