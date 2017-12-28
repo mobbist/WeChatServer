@@ -41,7 +41,7 @@ app.use(async (ctx, next) => {
                 ctx.res.setHeader('Content-Type', 'application/xml')
                 let res = message.text(result.xml, result.xml.Content)
 
-                ctx.res.end(res)
+                ctx.body = res
                 // if (err) {
                 //     Promise.reject(err)
                 // } else {
