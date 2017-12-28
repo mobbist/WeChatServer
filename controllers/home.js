@@ -5,10 +5,10 @@ const { getAccessToken } = require("../service/accessToken");
 
 async function getIndex(ctx) {
     // let accessToken = await getAccessToken();
-    checkSignature(ctx);
+    let accessToken = checkSignature(ctx);
 
 
-    ctx.body = "123"
+    ctx.body = accessToken
 }
 module.exports = {
     getIndex
