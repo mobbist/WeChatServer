@@ -3,7 +3,7 @@
 const sha1 = require("sha1");
 
 
-//验证微信转发服务器
+//验证微信转发服务器(安全模式)
 async function checkSignature(ctx) {
     let token = "airwallexBillZhu";
     let { signature, timestamp, nonce, echostr } = ctx.request.query
@@ -33,7 +33,11 @@ async function checkSignature(ctx) {
 
 
 }
-
+//验证微信转发服务器(明文模式)
+async function easyCheck(ctx) {
+    console.log(ctx.require.query);
+}
 module.exports = {
-    checkSignature
+    checkSignature,
+    easyCheck
 }
