@@ -31,10 +31,14 @@ app.use(async (ctx, next) => {
         let promise = new Promise(function (resolve, reject) {
             let buf = ''
             ctx.req.setEncoding('utf8')
+            //监听接受xml数据
             ctx.req.on('data', (chunk) => {
                 buf += chunk
             })
+            //接受完成转为JSON
             ctx.req.on('end', () => {
+
+                console.log(buf);
                 xmlToJson(buf)
                     .then(resolve)
                     .catch(reject)
@@ -42,7 +46,6 @@ app.use(async (ctx, next) => {
         })
 
         await promise.then((result) => {
-            console.log(result);
             ctx.req.body = result
         })
             .catch((e) => {
