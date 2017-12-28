@@ -26,6 +26,7 @@ message = {
 app.use(async (ctx, next) => {
     //这里监听微信消息
     if (ctx.method == 'POST' && ctx.is('text/xml')) {
+        ctx.res.setHeader('Content-Type', 'application/xml')
         let buf = ''
         ctx.req.setEncoding('utf8')
         //监听接受xml数据
@@ -35,7 +36,7 @@ app.use(async (ctx, next) => {
         //接受完成转为JSON
         ctx.req.on('end', () => {
 
-            ctx.res.setHeader('Content-Type', 'application/xml')
+
             xml2js.parseString(buf, (err, result) => {
                 let res = message.text(result.xml, result.xml.Content)
                 console.log(res);
