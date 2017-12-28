@@ -6,7 +6,7 @@ const app = new Koa();
 // xmlTool.js
 const xml2js = require('xml2js')
 
-xmlToJson = (str) => {
+const xmlToJson = (str) => {
     return new Promise((resolve, reject) => {
         const parseString = xml2js.parseString
         parseString(str, (err, result) => {
@@ -19,7 +19,7 @@ xmlToJson = (str) => {
     })
 }
 
-jsonToXml = (obj) => {
+const jsonToXml = (obj) => {
     const builder = new xml2js.Builder()
     return builder.buildObject(obj)
 }
@@ -28,19 +28,17 @@ jsonToXml = (obj) => {
 app.use(async (ctx, next) => {
     //这里监听微信消息
     if (ctx.method == 'POST' && ctx.is('text/xml')) {
-        let promise = new Promise(function (resolve, reject) {
-            let buf = ''
-            ctx.req.setEncoding('utf8')
-            //监听接受xml数据
-            ctx.req.on('data', (chunk) => {
-                buf += chunk
-            })
-            //接受完成转为JSON
-            ctx.req.on('end', () => {
 
-                let json = await xmlToJson(buf)
-                console.log(json);
-            })
+        let buf = ''
+        ctx.req.setEncoding('utf8')
+        //监听接受xml数据
+        ctx.req.on('data', (chunk) => {
+            buf += chunk
+        })
+        //接受完成转为JSON
+        ctx.req.on('end', () => {
+            let json = xmlToJson(buf);
+            console.log(json);
         })
 
 
