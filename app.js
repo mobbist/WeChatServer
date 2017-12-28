@@ -24,8 +24,9 @@ app.use(async (ctx, next) => {
         })
         //接受完成转为JSON
         ctx.req.on('end', () => {
+            console.log(buf)
             xml2js.parseString(buf, (err, result) => {
-
+                console.log(buf)
                 // if (err) {
                 //     Promise.reject(err)
                 // } else {
