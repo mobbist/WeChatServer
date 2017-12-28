@@ -5,7 +5,7 @@ const app = new Koa();
 
 
 app.use(async (ctx, next) => {
-    console.log(ctx.response)
+    console.log(ctx.request.body)
     await next();
 })
 
