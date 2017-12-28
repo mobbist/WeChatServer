@@ -7,6 +7,7 @@ async function getIndex(ctx) {
     // let accessToken = await getAccessToken();
     let accessToken = checkSignature(ctx);
 
+    console.log("最终返回的echostr: " + accessToken);
 
     ctx.body = accessToken
 }
