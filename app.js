@@ -38,19 +38,12 @@ app.use(async (ctx, next) => {
             //接受完成转为JSON
             ctx.req.on('end', () => {
 
-                console.log(buf);
-                xmlToJson(buf)
-                    .then(resolve)
-                    .catch(reject)
+                let json = await xmlToJson(buf)
+                console.log(json);
             })
         })
 
-        await promise.then((result) => {
-            ctx.req.body = result
-        })
-            .catch((e) => {
-                e.status = 400
-            })
+
 
         await next()
     } else {
