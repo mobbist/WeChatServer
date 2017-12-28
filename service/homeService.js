@@ -1,6 +1,9 @@
 //const {query} = require("../utils/pool");
 //具体干实事的模块
 const sha1 = require("sha1");
+
+
+//验证微信转发服务器
 async function checkSignature(ctx) {
     let token = "airwallexBillZhu";
     let { signature, timestamp, nonce, echostr } = ctx.request.query
