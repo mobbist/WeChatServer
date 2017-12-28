@@ -5,7 +5,7 @@ const { getAccessToken } = require("../service/accessToken");
 
 async function getIndex(ctx) {
     // let accessToken = await getAccessToken();
-    let accessToken = checkSignature(ctx);
+    let accessToken = await checkSignature(ctx);
 
     console.log("最终返回的echostr: " + accessToken);
 
