@@ -7,10 +7,10 @@ const toWeChatGetAccessToken = async () => {
     let secret = "740fa80d6ee2d8b4702eb0545a2eb82c"
     let res = await request(`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`)
     res = JSON.parse(res.body);
+
     if (res.errcode == 0) {
         return Promise.resolve(res);
     } else {
-        console.log(res);
         return Promise.resolve(res.errcode);
     }
 }
@@ -21,13 +21,11 @@ let expiresIn = 0;
 app.use(async (ctx) => {
     if (ctx.url == "/getAccessToken") {
         if (accessToken) {
-            ctx.body = accessToken;
+            ctx.body = accessToken
         } else {
             accessToken = await toWeChatGetAccessToken();
         }
-
-        ctx.body = accessToken;
-        //ctx.body = accessToken;
+        ctx.body = accessToken
     } else {
 
         ctx.body = 'error'
@@ -38,5 +36,5 @@ app.use(async (ctx) => {
 
 
 
-app.listen(3005)
+app.listen(6000)
 console.log('[demo] start-quick is starting at port 3005')

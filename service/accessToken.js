@@ -11,9 +11,9 @@ const getAccessToken = async () => {
 toWechatAccessToken = async () => {
     let appid = "wxe2688e3d857ef00f"
     let secret = "740fa80d6ee2d8b4702eb0545a2eb82c"
-    var res = await request(`http://47.91.245.123:3005/getAccessToken`)
+    var res = await request(`http://47.91.245.123:8081/getAccessToken`)
     console.log(res.body);
-    return Promise.resolve(res);
+    return Promise.resolve(res.body);
 }
 
 module.exports = {

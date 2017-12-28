@@ -6,7 +6,7 @@ async function getIndex(ctx) {
     let self = ctx;
     //var check = await userService.checkSignature(ctx);
     let accessToken = await getAccessToken();
-    self.body = "123"
+    self.body = accessToken
 }
 
 module.exports = {
