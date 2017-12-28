@@ -2,10 +2,12 @@ const Koa = require("koa");
 const static = require("koa-static");
 const path = require("path");
 const app = new Koa();
-
-
+const bodyParser = require("koa-bodyparser");
+app.use(bodyParser())
 app.use(async (ctx, next) => {
-    console.log(ctx.request.body)
+    if (ctx.method === 'POST') {
+        console.log(ctx.request.body);
+    }
     await next();
 })
 

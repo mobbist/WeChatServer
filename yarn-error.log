@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add async-request
+  /usr/local/bin/node /usr/local/bin/yarn add koa-bodyparser
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.6/bin
@@ -20,6 +20,7 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
+      "async-request": "^1.2.0",
       "koa": "^2.4.1",
       "koa-bodyparser": "^4.2.0",
       "koa-router": "^7.3.0",
@@ -63,6 +64,14 @@ Lockfile:
   assert-plus@1.0.0, assert-plus@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-1.0.0.tgz#f12e0f3c5d77b0b1cdd9146942e4e96c1e4dd525"
+  
+  async-request@^1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/async-request/-/async-request-1.2.0.tgz#b407af8b972d0292af659f190097f121dfa6ac9a"
+    dependencies:
+      lodash "^3.5.0"
+      request "^2.53.0"
+      tough-cookie "^0.12.1"
   
   asynckit@^0.4.0:
     version "0.4.0"
@@ -453,6 +462,10 @@ Lockfile:
       type-is "^1.5.5"
       vary "^1.0.0"
   
+  lodash@^3.5.0:
+    version "3.10.1"
+    resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  
   media-typer@0.3.0:
     version "0.3.0"
     resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -523,6 +536,10 @@ Lockfile:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   
+  punycode@>=0.2.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
+  
   punycode@^1.4.1:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
@@ -540,7 +557,7 @@ Lockfile:
       iconv-lite "0.4.19"
       unpipe "1.0.0"
   
-  request@^2.83.0:
+  request@^2.53.0:
     version "2.83.0"
     resolved "https://registry.yarnpkg.com/request/-/request-2.83.0.tgz#ca0b65da02ed62935887808e6f510381034e3356"
     dependencies:
@@ -633,6 +650,12 @@ Lockfile:
     dependencies:
       any-promise "^1.0.0"
   
+  tough-cookie@^0.12.1:
+    version "0.12.1"
+    resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-0.12.1.tgz#8220c7e21abd5b13d96804254bd5a81ebf2c7d62"
+    dependencies:
+      punycode ">=0.2.0"
+  
   tough-cookie@~2.3.3:
     version "2.3.3"
     resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.3.tgz#0b618a5565b6dea90bf3425d04d55edc475a7561"
@@ -681,4 +704,4 @@ Lockfile:
       extsprintf "^1.2.0"
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/Users/bill.zhu/Documents/WeChatServer/node_modules/request/node_modules/tough-cookie'
+  Error: EACCES: permission denied, unlink '/Users/bill.zhu/Documents/WeChatServer/node_modules/.bin/sshpk-conv'
