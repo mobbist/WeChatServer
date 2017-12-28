@@ -34,10 +34,11 @@ app.use(async (ctx, next) => {
         })
         //接受完成转为JSON
         ctx.req.on('end', () => {
+
+            ctx.res.setHeader('Content-Type', 'application/xml')
             xml2js.parseString(buf, (err, result) => {
                 let res = message.text(result.xml, result.xml.Content)
                 console.log(res);
-                ctx.res.setHeader('Content-Type', 'application/xml')
                 ctx.res.end(res)
                 // if (err) {
                 //     Promise.reject(err)
