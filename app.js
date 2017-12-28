@@ -6,7 +6,7 @@ const app = new Koa();
 
 app.use(async (ctx, next) => {
     let msg
-    msg = ctx.req.body ? ctx.req.body.xml : ''
+    msg = ctx.request.body ? ctx.request.body.xml : ''
     console.log(msg)
     await next();
 })
