@@ -26,6 +26,7 @@ jsonToXml = (obj) => {
 
 
 app.use(async (ctx, next) => {
+    //这里监听微信消息
     if (ctx.method == 'POST' && ctx.is('text/xml')) {
         let promise = new Promise(function (resolve, reject) {
             let buf = ''
@@ -41,6 +42,7 @@ app.use(async (ctx, next) => {
         })
 
         await promise.then((result) => {
+            console.log(result);
             ctx.req.body = result
         })
             .catch((e) => {
