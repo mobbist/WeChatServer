@@ -37,8 +37,7 @@ app.use(async (ctx, next) => {
         })
         //接受完成转为JSON
         ctx.req.on('end', () => {
-            let json = xmlToJson(buf);
-            console.log(json);
+            console.log(buf)
         })
 
 
