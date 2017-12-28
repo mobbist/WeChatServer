@@ -4,7 +4,10 @@ const path = require("path");
 const app = new Koa();
 
 
-
+app.use(async (ctx, next) => {
+    console.log(ctx.request);
+    await next();
+})
 
 
 

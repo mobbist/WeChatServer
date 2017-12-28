@@ -7,8 +7,8 @@ const toWeChatGetAccessToken = async () => {
     let secret = "740fa80d6ee2d8b4702eb0545a2eb82c"
     let res = await request(`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`)
     res = JSON.parse(res.body);
-
-    if (res.errcode == 0) {
+    console.log("newToken");
+    if (res.access_token) {
         return Promise.resolve(res);
     } else {
         return Promise.resolve(res.errcode);

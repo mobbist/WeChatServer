@@ -3,11 +3,12 @@ const userService = require("../service/homeService");
 //const bodyParser = require("koa-bodyparser");
 const { getAccessToken } = require("../service/accessToken");
 async function getIndex(ctx) {
-    let self = ctx;
-    let accessToken = await getAccessToken();
-    self.body = accessToken
-}
+    // let accessToken = await getAccessToken();
 
+
+
+    ctx.body = "123"
+}
 module.exports = {
     getIndex
 }
