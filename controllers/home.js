@@ -5,8 +5,8 @@ const { getAccessToken } = require("../service/accessToken");
 async function getIndex(ctx) {
     let self = ctx;
     //var check = await userService.checkSignature(ctx);
-    let accessToken = await getAccessToken();
-    self.body = accessToken
+    //let accessToken = await getAccessToken();
+    self.body = "123"
 }
 
 module.exports = {
