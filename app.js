@@ -6,18 +6,7 @@ const app = new Koa();
 // xmlTool.js
 const xml2js = require('xml2js')
 
-const xmlToJson = (str) => {
-    return new Promise((resolve, reject) => {
-        const parseString = xml2js.parseString
-        parseString(str, (err, result) => {
-            if (err) {
-                reject(err)
-            } else {
-                resolve(result)
-            }
-        })
-    })
-}
+
 
 const jsonToXml = (obj) => {
     const builder = new xml2js.Builder()
@@ -37,7 +26,15 @@ app.use(async (ctx, next) => {
         })
         //接受完成转为JSON
         ctx.req.on('end', () => {
-            console.log(buf)
+            xml2js.parseString(buf, (err, result) => {
+                console.log(result);
+                // if (err) {
+                //     Promise.reject(err)
+                // } else {
+                //     Promise.resolve(result)
+                // }
+            })
+            console.log(json);
         })
 
 
