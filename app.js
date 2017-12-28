@@ -36,8 +36,9 @@ app.use(async (ctx, next) => {
         ctx.req.on('end', () => {
             xml2js.parseString(buf, (err, result) => {
                 let res = message.text(result.xml, result.xml.Content)
-                ctx.res.setHeader('Content-Type', 'application/xml')
-                ctx.res.end(res)
+                console.log(res);
+                // ctx.res.setHeader('Content-Type', 'application/xml')
+                // ctx.res.end(res)
                 // if (err) {
                 //     Promise.reject(err)
                 // } else {
