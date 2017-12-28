@@ -35,7 +35,7 @@ app.use(async (ctx, next) => {
                 buf += chunk
             })
             ctx.req.on('end', () => {
-                xml.xmlToJson(buf)
+                xmlToJson(buf)
                     .then(resolve)
                     .catch(reject)
             })
