@@ -35,7 +35,7 @@ async function checkSignature(ctx) {
 }
 //验证微信转发服务器(明文模式)
 async function easyCheck(ctx) {
-    console.log(ctx.require.query);
+    console.log(ctx.request.query);
 }
 module.exports = {
     checkSignature,
