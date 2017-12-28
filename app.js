@@ -34,7 +34,7 @@ app.use(async (ctx, next) => {
                 //     Promise.resolve(result)
                 // }
             })
-            console.log(json);
+            //console.log(json);
         })
 
 
