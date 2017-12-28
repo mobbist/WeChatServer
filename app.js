@@ -4,7 +4,7 @@ const path = require("path");
 const app = new Koa();
 
 // xmlTool.js
-const xml2js = require('xml2js')
+//const xml2js = require('xml2js')
 // const jsonToXml = (obj) => {
 //     const builder = new xml2js.Builder()
 //     return builder.buildObject(obj)
