@@ -11,7 +11,7 @@ const jsonToXml = (obj) => {
 }
 message = {
     text(msg, content) {
-        return xml.jsonToXml({
+        return jsonToXml({
             xml: {
                 ToUserName: msg.FromUserName,
                 FromUserName: msg.ToUserName,
