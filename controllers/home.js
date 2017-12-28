@@ -5,11 +5,10 @@ const { getAccessToken } = require("../service/accessToken");
 
 async function getIndex(ctx) {
     // let accessToken = await getAccessToken();
-    let accessToken = await checkSignature(ctx);
 
-    console.log("最终返回的echostr: " + accessToken);
 
-    ctx.body = accessToken
+
+    ctx.body = "123"
 }
 module.exports = {
     getIndex
