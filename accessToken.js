@@ -36,5 +36,5 @@ app.use(async (ctx) => {
 
 
 
-app.listen(8000)
+app.listen(8000, "127.0.0.1")
 console.log('[demo] start-quick is starting at port 8000')
