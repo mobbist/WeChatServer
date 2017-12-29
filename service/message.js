@@ -51,11 +51,9 @@ const returnMessage = (message) => {
 
     switch (message) {
         case "1":
-            return "<a href='http://127.0.0.1/identity/authentication'>点击上传身份认证</a>"
+            return "<a href='http://47.91.245.123/identity/authentication'>点击上传身份认证</a>"
 
-            break;
         default:
             return "请输入1,进行上传身份认证"
-            break;
     }
 }
