@@ -10,7 +10,7 @@ exports.getMessage = async (ctx) => {
             FromUserName: msg.xml.ToUserName,
             CreateTime: Date.now(),
             MsgType: msg.xml.MsgType,
-            Content: "<a href='http://www.baidu.com'>链接</a>"
+            Content: returnMessage(msg.xml.Content[0])
         }
     });
 
@@ -44,4 +44,18 @@ const getData = async (ctx) => {
 const jsonToXml = (obj) => {
     const builder = new xml2js.Builder()
     return builder.buildObject(obj)
+}
+
+//传入内容, 返回响应的内容
+const returnMessage = (message) => {
+
+    switch (message) {
+        case "1":
+            return "<a href='http://127.0.0.1/identity/authentication'>点击上传身份认证</a>"
+
+            break;
+        default:
+            return "请输入1,进行上传身份认证"
+            break;
+    }
 }
