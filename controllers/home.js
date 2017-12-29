@@ -7,6 +7,7 @@ exports.getIndex = async (ctx) => {
     // let accessToken = await getAccessToken();
     checkXMLMiddleware(ctx);
 
+    ctx.body = "123"
     // ctx.res.setHeader('Content-Type', 'application/xml')
     // ctx.res.end("<abc>123</abc>")
 }
