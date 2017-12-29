@@ -1,14 +1,16 @@
 const Koa = require("koa");
 const static = require("koa-static");
 const path = require("path");
+
+const bodyParser = require("koa-bodyparser");
+
 const app = new Koa();
 
+app.use(bodyParser())
 
 
-app.use(async (ctx, next) => {
-    console.log(ctx.request);
-    await next();
-})
+
+
 
 
 
