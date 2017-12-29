@@ -10,7 +10,7 @@ exports.getMessage = async (ctx) => {
             FromUserName: msg.xml.ToUserName,
             CreateTime: Date.now(),
             MsgType: msg.xml.MsgType,
-            Content: msg.xml.Content
+            Content: "<a href='http://www.baidu.com'>链接</a>"
         }
     });
 
