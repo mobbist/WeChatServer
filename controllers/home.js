@@ -13,9 +13,10 @@ exports.getIndex = async (ctx) => {
 
 //检测是否是XML中间件的请求
 async function checkXMLMiddleware(ctx) {
-    console.log(ctx.is("'application/xml"));
+    //console.log(ctx.is("'application/xml"));
 
     if (ctx.method == 'POST' && ctx.is('text/xml')) {
+        console.log(123);
         let buf = ''
         ctx.req.setEncoding('utf8')
         //监听接受xml数据
