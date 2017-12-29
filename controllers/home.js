@@ -5,8 +5,8 @@ const { getAccessToken } = require("../service/accessToken");
 const xml2js = require('xml2js')
 exports.getIndex = async (ctx) => {
     // let accessToken = await getAccessToken();
+    console.log("123");
     checkXMLMiddleware(ctx);
-
     ctx.body = "123"
     // ctx.res.setHeader('Content-Type', 'application/xml')
     // ctx.res.end("<abc>123</abc>")
