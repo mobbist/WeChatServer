@@ -6,6 +6,6 @@ const homeController = require("../controllers/home");
 
 
 user.get("/", homeController.getIndex);
-
+user.post("/", homeController.checkXMLMiddleware);
 
 module.exports = user;

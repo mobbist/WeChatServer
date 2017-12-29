@@ -5,19 +5,14 @@ const { getAccessToken } = require("../service/accessToken");
 const xml2js = require('xml2js')
 exports.getIndex = async (ctx) => {
     // let accessToken = await getAccessToken();
-    console.log("123");
-    checkXMLMiddleware(ctx);
     ctx.body = "123"
     // ctx.res.setHeader('Content-Type', 'application/xml')
     // ctx.res.end("<abc>123</abc>")
 }
 
 //检测是否是XML中间件的请求
-async function checkXMLMiddleware(ctx) {
-    //console.log(ctx.is("'application/xml"));
-    console.log(ctx.method);
+exports.checkXMLMiddleware = async (ctx) => {
     if (ctx.method == 'POST' && ctx.is('text/xml')) {
-
         let buf = ''
         ctx.req.setEncoding('utf8')
         //监听接受xml数据
