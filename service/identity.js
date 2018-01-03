@@ -5,7 +5,7 @@ const path = require('path');
 exports.uploadIdentity = async (ctx) => {
     return new Promise((resolve, reject) => {
 
-
+        console.log("是否进来");
         const files = ctx.request.body.files || {};
         for (let key in files) {
             //获得每一项的file的key值
@@ -18,6 +18,7 @@ exports.uploadIdentity = async (ctx) => {
             //设置写入到目标地址
             const writer = fs.createWriteStream(filePath);
             //写入
+            console.log("是否到写入");
             reader.pipe(writer);
             //删除临时文件路径
             fs.unlink(file.path, (err) => {
