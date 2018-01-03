@@ -2,16 +2,17 @@ const Koa = require("koa");
 const static = require("koa-static");
 const views = require('koa-views')
 const path = require("path");
-
-
+const koaBody = require("koa-body");
 const app = new Koa();
-
+//multipart: true 指接受上传文件, 不传则是普通表单
+app.use(koaBody({ multipart: true }));
 
 
 // 加载模板引擎
 app.use(views(path.join(__dirname, './dist'), {
     extension: 'html'
 }))
+
 
 
 

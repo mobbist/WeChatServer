@@ -6,6 +6,7 @@
   "dependencies": {
     "async-request": "^1.2.0",
     "koa": "^2.4.1",
+    "koa-body": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.2",
